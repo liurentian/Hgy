@@ -1,4 +1,4 @@
-package com.hgy;
+package com.hgy.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.hgy.R;
 import com.hgy.base.BaseActivity;
 import com.hgy.db.MyUser;
 

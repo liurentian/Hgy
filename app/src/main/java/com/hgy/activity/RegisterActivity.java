@@ -1,4 +1,4 @@
-package com.hgy;
+package com.hgy.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.hgy.R;
 import com.hgy.base.BaseActivity;
 import com.hgy.db.MyUser;
 
