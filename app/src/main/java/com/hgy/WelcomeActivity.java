@@ -28,5 +28,6 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private void ToHome() {
         startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 }

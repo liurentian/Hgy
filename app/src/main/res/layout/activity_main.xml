@@ -4,9 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.hgy.main.MainActivity">
-    <TextView
+    <FrameLayout
+        android:id="@+id/main_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MainActivity"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+   <RadioGroup
+       android:id="@+id/main_rg"
+       android:layout_width="match_parent"
+       android:orientation="horizontal"
+       android:gravity="center_horizontal"
+       android:layout_height="wrap_content">
+
+       <RadioButton
+           android:id="@+id/main_tab_news"
+           android:checked="true"
+           android:drawableTop="@drawable/tab_icon_new"
+           android:text="综合"
+           style="@style/main_tab_button_style" />
+       <RadioButton
+           android:id="@+id/main_tab_tweet"
+           android:drawableTop="@drawable/tab_icon_tweet"
+           android:text="动弹"
+           style="@style/main_tab_button_style" />
+
+       <RadioButton
+           android:id="@+id/main_tab_explore"
+           style="@style/main_tab_button_style"
+           android:drawableTop="@drawable/tab_icon_explore"
+           android:text="发现" />
+
+       <RadioButton
+           android:id="@+id/main_tab_me"
+           android:drawableTop="@drawable/tab_icon_me"
+           android:text="我的"
+           style="@style/main_tab_button_style" />
+
+   </RadioGroup>
 </LinearLayout>
