@@ -22,11 +22,13 @@ public class LoginActivity extends BaseActivity {
     private EditText login_password;
     private Button login;
     private Button register;
+    private String from;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        from = getIntent().getStringExtra("from");
         initView();
     }
 
@@ -63,6 +65,10 @@ public class LoginActivity extends BaseActivity {
             public void done(MyUser myUser, BmobException e) {
                 if(myUser!=null){
                     Log.i("smile","用户登陆成功");
+                    if (from.equals("LostAndFoundActivity")){
+                        setResult(001);
+                        finish();
+                    }
                 }
             }
         });

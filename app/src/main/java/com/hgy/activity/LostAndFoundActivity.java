@@ -12,11 +12,13 @@ import com.hgy.R;
 import com.hgy.adapter.LostLVAdapter;
 import com.hgy.base.BaseActivity;
 import com.hgy.db.Lost;
+import com.hgy.db.MyUser;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 
@@ -86,9 +88,22 @@ public class LostAndFoundActivity extends BaseActivity {
     //添加信息
     public void addMessage(View view){
         //判断是否登录 然后跳转
-        Intent intent=new Intent(this,AddLostMsgActivity.class);
-        intent.putExtra("lostType",type);
-        startActivity(intent);
+        addMessage();
+    }
+
+    private void addMessage() {
+        MyUser userInfo = BmobUser.getCurrentUser(MyUser.class);
+        if(userInfo != null){
+            // 允许用户使用应用
+            Intent intent=new Intent(this,AddLostMsgActivity.class);
+            intent.putExtra("lostType",type);
+            startActivity(intent);
+        }else{
+            //缓存用户对象为空时， 可打开用户注册界面…
+            Intent intent=new Intent(this,LoginActivity.class);
+            intent.putExtra("from","LostAndFoundActivity");
+            startActivityForResult(intent,001);
+        }
     }
 
     @Override
@@ -99,5 +114,13 @@ public class LostAndFoundActivity extends BaseActivity {
 
     public void back(View view){
         finish();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==001){
+            addMessage();
+        }
     }
 }

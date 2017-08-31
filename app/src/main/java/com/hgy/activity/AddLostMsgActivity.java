@@ -10,7 +10,9 @@ import android.widget.Toast;
 import com.hgy.R;
 import com.hgy.base.BaseActivity;
 import com.hgy.db.Lost;
+import com.hgy.db.MyUser;
 
+import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 
@@ -60,7 +62,7 @@ public class AddLostMsgActivity extends BaseActivity {
         lost.setTitle(titleText);
         lost.setPhone(phoneNum);
         lost.setDescribe(description);
-        lost.setPublisher("aaa");
+        lost.setPublisher(BmobUser.getCurrentUser(MyUser.class).getUsername());
         lost.setType(lostType+"");
         lost.save(new SaveListener<String>() {
             @Override
