@@ -11,4 +11,22 @@
         <item name="android:gravity">center_horizontal</item>
     </style>
 
+
+    <!--发现界面 操作项 样式 -->
+    <style name="option_item_ll_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/ic_material</item>
+    </style>
+
+    <!--发现界面 横线样式 -->
+    <style name="h_line_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/h_line_Color</item>
+    </style>
+
 </resources>
