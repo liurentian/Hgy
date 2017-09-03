@@ -8,6 +8,7 @@ import android.widget.RadioGroup;
 
 import com.hgy.R;
 import com.hgy.adapter.NoScrollPagerAdapter;
+import com.hgy.db.MyUser;
 import com.hgy.fragment.ExploreFragment;
 import com.hgy.fragment.MineFragment;
 import com.hgy.fragment.NewsFragment;
@@ -61,5 +62,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        MyUser.logOut();
     }
 }

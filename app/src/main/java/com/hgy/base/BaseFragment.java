@@ -39,7 +39,7 @@ public abstract class BaseFragment extends Fragment {
         return mRoot;
     }
 
-    private void initData() {
+    protected void initData() {
 
     }
 

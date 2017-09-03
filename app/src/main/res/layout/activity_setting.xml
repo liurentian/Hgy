@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/window_background_color"
+    android:layout_height="match_parent">
+    <include layout="@layout/layout_title_with_back"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            style="@style/h_line_style"
+            android:layout_height="1px"
+            android:layout_marginTop="25dp" />
+
+        <LinearLayout
+            android:id="@+id/lost_found_ll"
+            style="@style/option_item_ll_style">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="8dp"
+                android:text="意见反馈"
+                android:textColor="@color/option_item_textColor" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_arrow_right" />
+        </LinearLayout>
+
+        <View
+            style="@style/h_line_style"
+            android:layout_height="1px"
+            android:layout_marginLeft="50dp" />
+
+        <LinearLayout style="@style/option_item_ll_style">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="8dp"
+                android:text="关于我们"
+                android:textColor="@color/option_item_textColor" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_arrow_right" />
+        </LinearLayout>
+
+        <View
+            style="@style/h_line_style"
+            android:layout_height="1px"
+            android:layout_marginLeft="50dp" />
+
+        <LinearLayout style="@style/option_item_ll_style">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="8dp"
+                android:text="检测更新"
+                android:textColor="@color/option_item_textColor" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_arrow_right" />
+        </LinearLayout>
+
+        <View
+            style="@style/h_line_style"
+            android:layout_height="1px" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <LinearLayout
+            android:id="@+id/setting_sign_up_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                style="@style/h_line_style"
+                android:layout_height="1px" />
+
+            <LinearLayout
+                style="@style/option_item_ll_style"
+                android:clickable="false">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="8dp"
+                    android:text="注销"
+                    android:textColor="@color/option_item_textColor" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_arrow_right" />
+            </LinearLayout>
+
+            <View
+                style="@style/h_line_style"
+                android:layout_height="1px" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

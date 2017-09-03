@@ -13,8 +13,15 @@
     <color name="window_background_color">#FFF1F1F1</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000</color>
+    <color name="transparent">#00000000</color>
 
     <color name="bg_press">#ebebeb</color>
+
+    <color name="login_line_color">#dededf</color>
+    <color name="account_input_bg_color">#33ffffff</color>
+    <color name="login_input_active">#31b968</color>
+    <color name="account_pressed_true">#14b94d</color>
+
 
     <color name="option_item_textColor">#FF747474</color>
     <color name="lost_item_textColor">#FF747474</color>

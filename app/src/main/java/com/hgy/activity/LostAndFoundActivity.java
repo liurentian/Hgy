@@ -1,5 +1,6 @@
 package com.hgy.activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -30,6 +31,8 @@ public class LostAndFoundActivity extends BaseActivity {
     private int type=-1;  //默认为 -1 丢失界面  1为 找回界面
     private List<Lost> lostList=new ArrayList<>();
     private LostLVAdapter adapter;
+    private ProgressDialog progressDialog;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,8 +46,10 @@ public class LostAndFoundActivity extends BaseActivity {
      * 请求服务器 获得数据
      */
     private void queryData() {
+        progressDialog = ProgressDialog.show(this,null,"加载中....",true,false);
         BmobQuery<Lost> query=new BmobQuery<>();
         query.addWhereEqualTo("type",type+"");
+        query.order("-createdAt");
         query.findObjects(new FindListener<Lost>() {
             @Override
             public void done(List<Lost> list, BmobException e) {
@@ -55,6 +60,7 @@ public class LostAndFoundActivity extends BaseActivity {
                 }else{
                     Log.i("bmob","失败："+e.getMessage()+","+e.getErrorCode());
                 }
+                progressDialog.dismiss();
             }
         });
     }
@@ -119,7 +125,7 @@ public class LostAndFoundActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode==001){
+        if (requestCode==001 && resultCode==001){
             addMessage();
         }
     }

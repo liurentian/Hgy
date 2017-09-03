@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.hgy.R;
@@ -16,7 +17,7 @@ import com.hgy.db.MyUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.LogInListener;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
     private EditText login_username;
     private EditText login_password;
@@ -37,20 +38,10 @@ public class LoginActivity extends BaseActivity {
         login_password = (EditText) findViewById(R.id.login_input_password);
         login = (Button) findViewById(R.id.login);
         register = (Button) findViewById(R.id.register);
-
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Login();
-            }
-        });
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(LoginActivity.this,RegisterActivity.class);
-                startActivity(intent);
-            }
-        });
+        ImageButton back= (ImageButton) findViewById(R.id.back);
+        back.setOnClickListener(this);
+        login.setOnClickListener(this);
+        register.setOnClickListener(this);
     }
 
     private void Login() {
@@ -67,10 +58,37 @@ public class LoginActivity extends BaseActivity {
                     Log.i("smile","用户登陆成功");
                     if (from.equals("LostAndFoundActivity")){
                         setResult(001);
-                        finish();
                     }
+                    finish();
+                }else {
+                    Toast.makeText(LoginActivity.this,"帐号或密码错误",Toast.LENGTH_SHORT).show();
                 }
             }
         });
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.back:
+                finish();
+                break;
+            case R.id.login:
+                Login();
+                break;
+            case R.id.register:
+                Intent intent=new Intent(LoginActivity.this,RegisterActivity.class);
+                startActivityForResult(intent,000);
+                break;
+        }
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==000 && resultCode==999){
+            login_username.setText(data.getStringExtra("username"));
+        }
     }
 }

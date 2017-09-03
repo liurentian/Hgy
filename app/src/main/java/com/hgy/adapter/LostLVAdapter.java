@@ -56,7 +56,7 @@ public class LostLVAdapter extends BaseAdapter {
         holder.title.setText(list.get(i).getTitle());
         holder.description.setText(list.get(i).getDescribe());
         holder.phone.setText(list.get(i).getPhone());
-        holder.data.setText("2017-5-9 18:46");
+        holder.data.setText(list.get(i).getCreatedAt());
         return view;
     }
 

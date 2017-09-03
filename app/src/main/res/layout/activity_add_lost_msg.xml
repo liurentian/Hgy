@@ -49,6 +49,8 @@
         android:layout_marginRight="10dp"
         android:layout_height="wrap_content">
         <EditText
+            android:padding="10dp"
+            android:background="@drawable/bg_add_lost_input"
             android:id="@+id/lost_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,7 +59,9 @@
             />
         <EditText
             android:id="@+id/lost_phone"
-            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_add_lost_input"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:lines="2"
@@ -65,7 +69,9 @@
             />
         <EditText
             android:id="@+id/lost_describe"
-            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_add_lost_input"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:lines="5"

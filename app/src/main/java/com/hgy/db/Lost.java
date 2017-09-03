@@ -12,7 +12,6 @@ public class Lost extends BmobObject {
     private String describe;  //联系手机
     private String publisher;  //发布信息者的用户名
     private String type;  //帖子类型 -1 为丢失物品的帖子 1为 捡到物品的帖子
-
     public String getTitle() {
         return title;
     }
