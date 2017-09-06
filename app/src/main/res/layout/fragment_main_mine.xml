@@ -164,60 +164,149 @@
                     android:text="粉丝"/>
             </LinearLayout>
         </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:id="@+id/mine_myInfo"
+                    style="@style/option_item_ll_style">
 
-        <LinearLayout
-            style="@style/option_item_ll_style">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12dp"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/ic_my_info" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="12dp"
-                android:contentDescription="@null"
-                android:src="@mipmap/ic_my_info" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="我的资料" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="我的资料" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/ic_arrow_right" />
+                </LinearLayout>
+                <View
+                    style="@style/h_line_style"
+                    android:layout_marginLeft="52dp"
+                    android:layout_height="1px"/>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:contentDescription="@null"
-                android:src="@mipmap/ic_arrow_right" />
-        </LinearLayout>
-        <View
-            style="@style/h_line_style"
-            android:layout_marginLeft="52dp"
-            android:layout_height="1dp"/>
+                <LinearLayout
+                    style="@style/option_item_ll_style">
 
-        <LinearLayout
-            style="@style/option_item_ll_style">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12dp"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/ic_my_info" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="12dp"
-                android:contentDescription="@null"
-                android:src="@mipmap/ic_my_info" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="等待开发" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="我的资料" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/ic_arrow_right" />
+                </LinearLayout>
+                <View
+                    style="@style/h_line_style"
+                    android:layout_marginLeft="52dp"
+                    android:layout_height="1px"/>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:contentDescription="@null"
-                android:src="@mipmap/ic_arrow_right" />
-        </LinearLayout>
-        <View
-            style="@style/h_line_style"
-            android:layout_marginLeft="52dp"
-            android:layout_height="1dp"/>
+                <LinearLayout
+                    style="@style/option_item_ll_style">
 
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12dp"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/ic_my_info" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="等待开发" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/ic_arrow_right" />
+                </LinearLayout>
+                <View
+                    style="@style/h_line_style"
+                    android:layout_marginLeft="52dp"
+                    android:layout_height="1px"/>
+
+                <LinearLayout
+                    style="@style/option_item_ll_style">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12dp"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/ic_my_info" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="等待开发" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/ic_arrow_right" />
+                </LinearLayout>
+                <View
+                    style="@style/h_line_style"
+                    android:layout_marginLeft="52dp"
+                    android:layout_height="1px"/>
+
+                <LinearLayout
+                    style="@style/option_item_ll_style">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12dp"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/ic_my_info" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="等待开发" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/ic_arrow_right" />
+                </LinearLayout>
+                <View
+                    style="@style/h_line_style"
+                    android:layout_marginLeft="52dp"
+                    android:layout_height="1px"/>
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 </LinearLayout>

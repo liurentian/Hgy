@@ -43,13 +43,23 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Full"/>
         <activity
+            android:name=".activity.MyInformationActivity"
+            android:theme="@style/AppTheme.NoTitle"/>
+        <activity
             android:name=".activity.LostAndFoundActivity"
+            android:label="失物招领界面"
             android:theme="@style/AppTheme.NoTitle"/>
         <activity
             android:name=".activity.SettingActivity"
+            android:label="设置界面"
             android:theme="@style/AppTheme.NoTitle"/>
         <activity
             android:name=".activity.AddLostMsgActivity"
+            android:label="添加失物招领信息"
+            android:theme="@style/AppTheme.NoTitle"/>
+        <activity
+            android:name=".activity.SelectedImageActivity"
+            android:label="选择图片"
             android:theme="@style/AppTheme.NoTitle"/>
         <activity
             android:name=".main.MainActivity"

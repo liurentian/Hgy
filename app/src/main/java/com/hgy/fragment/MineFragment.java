@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.hgy.R;
 import com.hgy.activity.LoginActivity;
+import com.hgy.activity.MyInformationActivity;
 import com.hgy.activity.SettingActivity;
 import com.hgy.base.BaseFragment;
 import com.hgy.db.MyUser;
@@ -35,6 +36,8 @@ public class MineFragment extends BaseFragment implements View.OnClickListener{
         super.initWidget(mRoot);
         ImageView ivSetting= (ImageView) mRoot.findViewById(R.id.mine_setting);
         ImageView ivUserPic= (ImageView) mRoot.findViewById(R.id.mine_userPic);
+        LinearLayout myInfo= (LinearLayout) mRoot.findViewById(R.id.mine_myInfo);
+        myInfo.setOnClickListener(this);
         ivSetting.setOnClickListener(this);
         ivUserPic.setOnClickListener(this);
         user_info_counts = (LinearLayout) mRoot.findViewById(R.id.mine_user_info_counts);
@@ -84,13 +87,16 @@ public class MineFragment extends BaseFragment implements View.OnClickListener{
                 startActivity(new Intent(mActivity, SettingActivity.class));
                 break;
             case R.id.mine_userPic:
-                if (BmobUser.getCurrentUser(MyUser.class)==null){
-                    Intent intent=new Intent(mActivity, LoginActivity.class);
-                    intent.putExtra("from","MineFragment");
+                if (BmobUser.getCurrentUser(MyUser.class)==null) {
+                    Intent intent = new Intent(mActivity, LoginActivity.class);
+                    intent.putExtra("from", "MineFragment");
                     startActivity(intent);
-                }else{
-
+                    break;
                 }
+                //如果登录 则进入 我的资料界面
+            case R.id.mine_myInfo:  //点击 我的资料
+                Intent intent=new Intent(mActivity, MyInformationActivity.class);
+                startActivity(intent);
                 break;
         }
     }
