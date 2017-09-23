@@ -17,7 +17,7 @@
             android:layout_marginTop="25dp" />
 
         <LinearLayout
-            android:id="@+id/lost_found_ll"
+            android:id="@+id/setting_ll_feedBack"
             style="@style/option_item_ll_style">
 
             <TextView

@@ -18,7 +18,7 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.LogInListener;
 
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
-
+    public static final int LOGIN_RESULT_CODE=0x555;
     private EditText login_username;
     private EditText login_password;
     private Button login;
@@ -56,9 +56,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             public void done(MyUser myUser, BmobException e) {
                 if(myUser!=null){
                     Log.i("smile","用户登陆成功");
-                    if (from.equals("LostAndFoundActivity")){
-                        setResult(001);
-                    }
+                    setResult(LOGIN_RESULT_CODE);
                     finish();
                 }else {
                     Toast.makeText(LoginActivity.this,"帐号或密码错误",Toast.LENGTH_SHORT).show();

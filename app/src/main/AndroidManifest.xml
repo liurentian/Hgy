@@ -44,6 +44,7 @@
             android:theme="@style/AppTheme.Full"/>
         <activity
             android:name=".activity.MyInformationActivity"
+            android:label="我的资料界面"
             android:theme="@style/AppTheme.NoTitle"/>
         <activity
             android:name=".activity.LostAndFoundActivity"
@@ -60,6 +61,10 @@
         <activity
             android:name=".activity.SelectedImageActivity"
             android:label="选择图片"
+            android:theme="@style/AppTheme.NoTitle"/>
+        <activity
+            android:name=".activity.FeedBackActivity"
+            android:label="意见反馈"
             android:theme="@style/AppTheme.NoTitle"/>
         <activity
             android:name=".main.MainActivity"

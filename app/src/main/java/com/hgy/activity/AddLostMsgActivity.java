@@ -62,7 +62,7 @@ public class AddLostMsgActivity extends BaseActivity {
         lost.setTitle(titleText);
         lost.setPhone(phoneNum);
         lost.setDescribe(description);
-        lost.setPublisher(BmobUser.getCurrentUser(MyUser.class).getUsername());
+        lost.setPublisher(BmobUser.getCurrentUser(MyUser.class));
         lost.setType(lostType+"");
         lost.save(new SaveListener<String>() {
             @Override

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/window_background_color"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_title_with_back"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/rb_error"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="程序错误"
+            android:textColor="@color/feed_back_color"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/rb_advise"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="功能建议"
+            android:textColor="@color/feed_back_color"
+            android:textSize="14sp" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/et_feed_back"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/white"
+        android:gravity="top"
+        android:hint="我们将不断改进"
+        android:padding="8dp"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="截图描述：（暂未开放）"
+        android:textSize="14sp"/>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/white"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_tweet_add"/>
+
+        <ImageView
+            android:id="@+id/iv_clear_img"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="4dp"
+            android:background="@mipmap/ic_clear_image_normal"
+            android:contentDescription="@null"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+    </FrameLayout>
+    <Button
+        android:id="@+id/btn_commit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/selector_shake_get"
+        android:elevation="0dp"
+        android:onClick="onClick"
+        android:outlineProvider="none"
+        android:text="提交反馈"
+        android:textColor="@color/white"
+        tools:targetApi="lollipop"/>
+</LinearLayout>

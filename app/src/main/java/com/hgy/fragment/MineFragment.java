@@ -58,18 +58,17 @@ public class MineFragment extends BaseFragment implements View.OnClickListener{
      */
     private void loadUserInfo() {
         MyUser user= BmobUser.getCurrentUser(MyUser.class);
-        if (user!=null){
-            //已登录
+        if (user!=null){ //已登录
             tvUsername.setText(user.getUsername());
             int sexPic=user.getSex().equals("男")?R.mipmap.ic_male:R.mipmap.ic_female;
             ivSex.setVisibility(View.VISIBLE);
             ivSex.setImageResource(sexPic);
-            tvScore.setVisibility(View.VISIBLE);
+//            tvScore.setVisibility(View.VISIBLE);
             user_info_counts.setVisibility(View.VISIBLE);
-        }else{
+        }else{ //未登录
             tvUsername.setText("点击头像登录");
             ivSex.setVisibility(View.GONE);
-            tvScore.setVisibility(View.GONE);
+//            tvScore.setVisibility(View.GONE);
             user_info_counts.setVisibility(View.GONE);
         }
     }
@@ -83,21 +82,22 @@ public class MineFragment extends BaseFragment implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.mine_setting:
+            case R.id.mine_setting: // 设置
                 startActivity(new Intent(mActivity, SettingActivity.class));
                 break;
-            case R.id.mine_userPic:
+            case R.id.mine_userPic: //用户头像
+            case R.id.mine_myInfo:  //我的资料
+                //如果未登录，则进入登录界面，登录则进入我的资料界面
                 if (BmobUser.getCurrentUser(MyUser.class)==null) {
                     Intent intent = new Intent(mActivity, LoginActivity.class);
                     intent.putExtra("from", "MineFragment");
                     startActivity(intent);
                     break;
+                }else{
+                    Intent intent=new Intent(mActivity, MyInformationActivity.class);
+                    startActivity(intent);
+                    break;
                 }
-                //如果登录 则进入 我的资料界面
-            case R.id.mine_myInfo:  //点击 我的资料
-                Intent intent=new Intent(mActivity, MyInformationActivity.class);
-                startActivity(intent);
-                break;
         }
     }
 }

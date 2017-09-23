@@ -17,6 +17,10 @@
 
     <color name="bg_press">#ebebeb</color>
 
+    <color name="main_green">#24cf5f</color>
+    <color name="main_gray">#9A9A9A</color>
+    <color name="main_black">#333</color>
+
     <color name="login_line_color">#dededf</color>
     <color name="account_input_bg_color">#33ffffff</color>
     <color name="login_input_active">#31b968</color>
