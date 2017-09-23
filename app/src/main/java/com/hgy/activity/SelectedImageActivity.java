@@ -3,6 +3,7 @@ package com.hgy.activity;
 import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
@@ -104,6 +105,7 @@ public class SelectedImageActivity extends BaseActivity {
             @Override
             public void onDismiss() {
                 lightOn();
+                mDirSelector.setImageResource(R.mipmap.ic_arrow_bottom);
             }
         });
         mPopupWindow.setSelectedListener(new ListImageDirPopupWindow.mDirSelectedListener() {
@@ -210,6 +212,7 @@ public class SelectedImageActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 mPopupWindow.showAsDropDown(mLinearLayout,0,0);
+                mDirSelector.setImageResource(R.mipmap.ic_arrow_top);
                 lightOff();
             }
         });
@@ -223,6 +226,10 @@ public class SelectedImageActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String path = mImgs.get(i);
+                Intent intent=new Intent();
+                intent.putExtra("ImgUri",path);
+                setResult(MyInformationActivity.PHOTO_FROM_GALLERY,intent);
+                finish();
             }
         });
     }

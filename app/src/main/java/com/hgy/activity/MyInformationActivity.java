@@ -17,8 +17,8 @@ import com.hgy.base.BaseActivity;
  */
 
 public class MyInformationActivity extends BaseActivity implements View.OnClickListener{
-    private static final int PHOTO_FROM_GALLERY = 1;
-    private static final int PHOTO_FROM_CAMERA = 2;
+    public static final int PHOTO_FROM_GALLERY = 0x001;
+    public static final int PHOTO_FROM_CAMERA = 0x002;
     private ImageView ivHeadPic;
 
     @Override
@@ -47,7 +47,7 @@ public class MyInformationActivity extends BaseActivity implements View.OnClickL
             case R.id.myInfo_headPic:
             case R.id.ly_headPic:
                  Intent intent = new Intent(this,SelectedImageActivity.class);
-                 startActivity(intent);
+                 startActivityForResult(intent,PHOTO_FROM_GALLERY);
                 break;
         }
     }
@@ -58,13 +58,11 @@ public class MyInformationActivity extends BaseActivity implements View.OnClickL
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode){
             case PHOTO_FROM_GALLERY:
-                if (resultCode==RESULT_OK){
-                    if (data != null) {
-                        Uri uri = data.getData();
-                        ivHeadPic.setImageURI(uri);
-                    }
-                }else {
-
+                switch (resultCode){
+                    case PHOTO_FROM_GALLERY:
+                        String imgUri = data.getStringExtra("ImgUri");
+                        ivHeadPic.setImageURI(Uri.parse(imgUri));
+                        break;
                 }
                 break;
 
